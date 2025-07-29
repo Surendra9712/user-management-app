@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "name": "Alex",
+        "email": "alex@example.com",
+        "phone": 989799484885,
+        "joinDate": "2022-02-04",
+        "role": "Branch Manager",
+        "status": 1,
+        "gender": 1,
+        "address": "Kathmandu"
+    },
+    {
+        "id": 2,
+        "name": "John Doe",
+        "email": "john@example.com",
+        "phone": 989799484885,
+        "joinDate": "2020-02-04",
+        "role": "Branch Manager",
+        "status": 1,
+        "gender": 1,
+        "address": "Kathmandu"
+    },
+    {
+        "id": 3,
+        "name": "Sam Smith",
+        "email": "sam@example.com",
+        "phone": 981234567890,
+        "joinDate": "2021-05-10",
+        "role": "Branch Manager",
+        "status": 1,
+        "gender": 2,
+        "address": "Pokhara"
+    },
+    {
+        "id": 4,
+        "name": "Johnson Charles",
+        "email": "Johnson@example.com",
+        "phone": 980112233445,
+        "joinDate": "2022-02-20",
+        "role": "General Manager",
+        "status": 0,
+        "gender": 1,
+        "address": "Lalitpur"
+    },
+    {
+        "id": 5,
+        "name": "Arbin Ray",
+        "email": "arbin@example.com",
+        "phone": 980556677889,
+        "joinDate": "2022-02-20",
+        "role": "General Manager",
+        "status": 1,
+        "gender": 1,
+        "address": "Bhaktapur"
+    },
+    {
+        "id": 6,
+        "name": "Jimmy",
+        "email": "jimmy@example.com",
+        "phone": 982345678901,
+        "joinDate": "2022-02-20",
+        "role": "General Manager",
+        "status": 1,
+        "gender": 2,
+        "address": "Kathmandu"
+    },
+    {
+        "id": 7,
+        "name": "Wilson Rai",
+        "email": "wilson@example.com",
+        "phone": 981122334455,
+        "joinDate": "2020-07-20",
+        "role": "General Manager",
+        "status": 0,
+        "gender": 1,
+        "address": "Chitwan"
+    },
+    {
+        "id": 8,
+        "name": "Hari bahadur",
+        "email": "hari@example.com",
+        "phone": 981998877665,
+        "joinDate": "2020-07-30",
+        "role": "General Manager",
+        "status": 1,
+        "gender": 1,
+        "address": "Pokhara"
+    },
+    {
+        "id": 9,
+        "name": "Krisha taylor",
+        "email": "Krisha@example.com",
+        "phone": 980123456789,
+        "joinDate": "2020-07-24",
+        "role": "Sales Manager",
+        "status": 1,
+        "gender": 2,
+        "address": "Lalitpur"
+    },
+    {
+        "id": 10,
+        "name": "William Thomas",
+        "email": "william@example.com",
+        "phone": 981234111222,
+        "joinDate": "2020-07-11",
+        "role": "Sales Manager",
+        "status": 0,
+        "gender": 1,
+        "address": "Kathmandu"
+    },
+    {
+        "id": 11,
+        "name": "Rani Singh",
+        "email": "rani@example.com",
+        "phone": 980888999000,
+        "joinDate": "2020-07-01",
+        "role": "Sales Manager",
+        "status": 1,
+        "gender": 2,
+        "address": "Biratnagar"
+    },
+    {
+        "id": 12,
+        "name": "Mohan Taylor",
+        "email": "mohan@example.com",
+        "phone": 984445556667,
+        "joinDate": "2020-07-20",
+        "role": "Sales Manager",
+        "status": 1,
+        "gender": 1,
+        "address": "Janakpur"
+    },
+    {
+        "id": 13,
+        "name": "Steve Smith",
+        "email": "mia@example.com",
+        "phone": 980111222333,
+        "joinDate": "2020-07-09",
+        "role": "Sales Manager",
+        "gender": 1,
+        "status": 0,
+        "address": "Itahari"
+    },
+    {
+        "id": 14,
+        "name": "Roman",
+        "email": "roman@example.com",
+        "phone": 981000111222,
+        "joinDate": "2019-02-14",
+        "role": "Sales Manager",
+        "status": 1,
+        "gender": 1,
+        "address": "Butwal"
+    },
+    {
+        "id": 15,
+        "name": "Martin Guptil",
+        "email": "martin@example.com",
+        "phone": 983332223334,
+        "joinDate": "2019-02-05",
+        "role": "Sales Manager",
+        "status": 1,
+        "gender": 1,
+        "address": "Dharan"
+    },
+    {
+        "id": 16,
+        "name": "Paras Khadka",
+        "email": "paras@example.com",
+        "phone": 984221123321,
+        "joinDate": "2019-02-17",
+        "role": "Sales Manager",
+        "status": 1,
+        "gender": 1,
+        "address": "Birgunj"
+    },
+    {
+        "id": 17,
+        "name": "Rubina Chhetri",
+        "email": "rubina@example.com",
+        "phone": 982110110110,
+        "joinDate": "2021-02-29",
+        "role": "Sales Manager",
+        "status": 0,
+        "gender": 2,
+        "address": "Nepalgunj"
+    },
+    {
+        "id": 18,
+        "name": "Garden Singh",
+        "email": "garden@example.com",
+        "phone": 980444555666,
+        "joinDate": "2021-02-02",
+        "role": "Sales Manager",
+        "status": 1,
+        "gender": 3,
+        "address": "Hetauda"
+    },
+    {
+        "id": 19,
+        "name": "Google User",
+        "email": "google@example.com",
+        "phone": 980777888999,
+        "joinDate": "2022-06-06",
+        "role": "Admin",
+        "status": 1,
+        "gender": 3,
+        "address": "Kathmandu"
+    },
+    {
+        "id": 20,
+        "name": "Simon Test",
+        "email": "simon@example.com",
+        "phone": 985554443333,
+        "joinDate": "2022-06-22",
+        "role": "Admin",
+        "status": 1,
+        "gender": 1,
+        "address": "Bhaktapur"
+    }
+]
