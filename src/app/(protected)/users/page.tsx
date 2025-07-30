@@ -3,7 +3,9 @@ import UserPageHeader from "@/app/(protected)/users/components/UserPageHeader";
 import {UserDrawerProvider} from "@/app/(protected)/users/provider/UserDrawerProvider";
 import AddEditUser from "@/app/(protected)/users/components/AddEditUser";
 import ProtectedRoute from "@/components/layout/ProtectedRoute";
-
+export const metadata = {
+    title: 'Users',
+};
 const UserList = () => {
     return (
         <ProtectedRoute>

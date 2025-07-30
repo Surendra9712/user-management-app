@@ -8,21 +8,20 @@ import {useMessageApi} from "@/context/MessageProvider";
 import {useUserDrawer} from "@/app/(protected)/users/provider/UserDrawerProvider";
 import dayjs from "dayjs";
 import {isNullOrUndefinedOrEmpty} from "@/utils/helper";
-
+const initialState = {
+    name: '',
+    email: '',
+    address: '',
+    status: 1,
+    gender: 1,
+    joinDate: '',
+    phone: undefined,
+    role: '',
+}
 const AddEditUser = () => {
     const message = useMessageApi();
     const {isOpen, user, close, setUser} = useUserDrawer();
     const {createUser, createUserLoading, updateUser, updateUserLoading} = useUsers();
-    const initialState = {
-        name: '',
-        email: '',
-        address: '',
-        status: 1,
-        gender: 1,
-        joinDate: '',
-        phone: undefined,
-        role: '',
-    }
 
     const validationSchema: Record<string, [(value: any, formData?: UserFormData) => boolean, string][]> = {
         name: [
@@ -77,7 +76,7 @@ const AddEditUser = () => {
         } else {
             setFormData(initialState)
         }
-    }, [user]);
+    }, [user,setFormData]);
 
     const handleClose = () => {
         resetForm();

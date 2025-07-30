@@ -17,8 +17,11 @@ const geistMono = Geist_Mono({
     subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-    title: 'User Management',
+export const metadata:Metadata = {
+    title: {
+        default: 'User Management',
+        template: '%s | User Management',
+    },
     description: 'User management application',
 };
 export default function RootLayout({
