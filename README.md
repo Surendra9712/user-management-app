@@ -102,11 +102,11 @@ The `signIn` page is customized via:
 
 ```ts
 pages: {
-  signIn: '/auth/login',
+  signIn: '/login'
 }
 ```
 
-Ensure `/auth/login` route exists in your application to handle login UI.
+Ensure `/login` route exists in your application to handle login UI.
 
 ---
 
