@@ -2,7 +2,7 @@
 
 import {createContext, ReactNode, useContext, useEffect, useState} from 'react';
 import {SessionProvider, useSession} from 'next-auth/react';
-import {UserSession} from "@/interface/userSession";
+import {UserSession} from "@/types/userSession";
 
 interface AuthContextType {
     user: UserSession['user'] | null;

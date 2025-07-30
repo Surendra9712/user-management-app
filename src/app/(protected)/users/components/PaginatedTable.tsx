@@ -4,14 +4,16 @@ import {useEffect, useState} from 'react';
 import {Button, Flex, Input, Popconfirm, Space, Table, Tag} from 'antd';
 import type {ColumnsType, TablePaginationConfig} from 'antd/es/table';
 import {SearchOutlined} from '@ant-design/icons';
-import {User} from "@/interface/user";
+import {User} from "@/types/user";
 import {useUsers} from "@/hooks/useUsers";
 import {AiOutlineDelete, AiOutlineEdit} from "react-icons/ai";
 import {useUserDrawer} from "@/app/(protected)/users/provider/UserDrawerProvider";
+import {useMessageApi} from "@/context/MessageProvider";
 
 export default function PaginatedTable() {
     const {data = [], isLoading, deleteUser,} = useUsers();
     const {open, setUser} = useUserDrawer();
+    const message = useMessageApi();
     const [filteredData, setFilteredData] = useState<User[]>([]);
     const [searchText, setSearchText] = useState('');
     const [pagination, setPagination] = useState<TablePaginationConfig>({
@@ -49,9 +51,9 @@ export default function PaginatedTable() {
             key: 'role',
             filters: [
                 {text: 'Admin', value: 'Admin'},
-                {text: 'Editor', value: 'Editor'},
-                {text: 'Viewer', value: 'Viewer'},
-                {text: 'Aman', value: 'aman'},
+                {text: 'General Manager', value: 'General Manager'},
+                {text: 'Sales Manager', value: 'Sales Manager'},
+                {text: 'Branch Manager', value: 'Branch Manager'},
             ],
             onFilter: (value, record) => record.role === value,
         },
@@ -128,6 +130,7 @@ export default function PaginatedTable() {
     };
     const handleConfirmDelete = async (user: User) => {
         await deleteUser(user.id);
+        message.success('User deleted successfully.');
     }
     return (
         <Flex vertical gap={'middle'}>

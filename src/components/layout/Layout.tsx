@@ -1,5 +1,5 @@
 import Header from "@/components/layout/Header";
-import { AntdRegistry } from '@ant-design/nextjs-registry';
+import {AntdRegistry} from '@ant-design/nextjs-registry';
 
 export default function Layout({children}: { children: React.ReactNode }) {
 

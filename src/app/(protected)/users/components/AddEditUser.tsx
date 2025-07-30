@@ -2,7 +2,7 @@
 import {DatePicker, Drawer, Radio, Select, Space} from "antd";
 import {useEffect} from "react";
 import {useUsers} from "@/hooks/useUsers";
-import {Button, Form, FormItem, Input, useFormHandler, validators,RadioGroup } from "@surendra9712/ui-components";
+import {Button, Form, FormItem, Input, useFormHandler, validators} from "@surendra9712/ui-components";
 import {UserFormData} from "@/types/userFormData";
 import {useMessageApi} from "@/context/MessageProvider";
 import {useUserDrawer} from "@/app/(protected)/users/provider/UserDrawerProvider";
@@ -88,7 +88,7 @@ const AddEditUser = () => {
     return (
         <div>
             <Drawer
-                title="Add User"
+                title={user ? "Edit User" : "Add User"}
                 closable={{'aria-label': 'Close Button'}}
                 onClose={handleClose}
                 open={isOpen}

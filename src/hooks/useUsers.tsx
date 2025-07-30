@@ -1,5 +1,5 @@
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
-import {User} from '@/interface/user';
+import {User} from '@/types/user';
 import {userService} from "@/service";
 
 export const useUsers = () => {

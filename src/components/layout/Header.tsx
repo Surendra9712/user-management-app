@@ -14,15 +14,17 @@ export default function Header() {
 
     return (
         <header
-            className="sticky top-0 z-50 flex justify-between items-center px-6 py-4 bg-gray-800 text-white shadow-md">
-            <div className="text-xl font-bold">
-                <Link href="/dashboard">Dashboard</Link>
+            className="sticky top-0 z-50 bg-gray-800 text-white shadow-md">
+            <div className="container flex justify-between items-center px-6 py-4">
+                <div className="text-xl font-bold">
+                    <Link href="/dashboard">Dashboard</Link>
+                </div>
+                <nav className="flex items-center gap-4">
+                    <Link href="/dashboard">Home</Link>
+                    <Link href="/users">Users</Link>
+                    <Button onClick={handleLogout}>Logout</Button>
+                </nav>
             </div>
-            <nav className="flex items-center gap-4">
-                <Link href="/dashboard">Home</Link>
-                <Link href="/users">Users</Link>
-                <Button onClick={handleLogout}>Logout</Button>
-            </nav>
         </header>
     );
 }

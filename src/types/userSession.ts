@@ -1,4 +1,4 @@
-export interface UserSession {
+export type UserSession = {
     user?: {
         name?: string | null;
         email?: string | null;

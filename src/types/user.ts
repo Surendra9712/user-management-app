@@ -1,7 +1,7 @@
 import {UserStatusEnum} from "@/enum/userStatus.enum";
 import {GenderEnum} from "@/enum/gender.enum";
 
-export interface User {
+export type User= {
     id: number;
     name: string;
     email: string;

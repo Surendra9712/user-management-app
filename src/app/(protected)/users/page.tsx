@@ -1,5 +1,5 @@
 import PaginatedTable from "@/app/(protected)/users/components/PaginatedTable";
-import PageHeader from "@/app/(protected)/users/components/PageHeader";
+import UserPageHeader from "@/app/(protected)/users/components/UserPageHeader";
 import {UserDrawerProvider} from "@/app/(protected)/users/provider/UserDrawerProvider";
 import AddEditUser from "@/app/(protected)/users/components/AddEditUser";
 import ProtectedRoute from "@/components/layout/ProtectedRoute";
@@ -7,11 +7,11 @@ import ProtectedRoute from "@/components/layout/ProtectedRoute";
 const UserList = () => {
     return (
         <ProtectedRoute>
-        <UserDrawerProvider>
-            <PageHeader/>
-            <AddEditUser/>
-            <PaginatedTable/>
-        </UserDrawerProvider>
+            <UserDrawerProvider>
+                <UserPageHeader/>
+                <AddEditUser/>
+                <PaginatedTable/>
+            </UserDrawerProvider>
         </ProtectedRoute>
     );
 };

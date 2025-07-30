@@ -1,6 +1,6 @@
 "use client"
 import {createContext, ReactNode, useContext, useState} from "react";
-import {User} from "@/interface/user";
+import {User} from "@/types/user";
 
 interface IUserDrawerContext {
     isOpen: boolean;

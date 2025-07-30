@@ -8,7 +8,7 @@ async function refreshAccessToken(refreshToken: string) {
             return {
                 accessToken: "new-mock-access-token",
                 refreshToken: "new-mock-refresh-token",
-                accessTokenExpires: Date.now() + 120 * 60 * 1000,
+                accessTokenExpires: Date.now() + 60 * 1000,
             };
         }
 
@@ -37,7 +37,7 @@ export const authOptions: NextAuthOptions = {
                         email: 'admin@example.com',
                         accessToken: 'mock-access-token',
                         refreshToken: 'mock-refresh-token',
-                        accessTokenExpires: Date.now() + 120 * 60 * 1000,
+                        accessTokenExpires: Date.now() + 60 * 1000,
                     };
                 }
                 return null;
@@ -46,7 +46,8 @@ export const authOptions: NextAuthOptions = {
     ],
     session: {
         strategy: 'jwt',
-        maxAge: 6 * 60 * 60,
+        maxAge: 60,
+        // maxAge: 6 * 60 * 60,
     },
     secret: process.env.NEXTAUTH_SECRET,
     jwt: {
@@ -95,6 +96,6 @@ export const authOptions: NextAuthOptions = {
         }
     },
     pages: {
-        signIn: '/auth/login',
+        signIn: '/login',
     }
 };

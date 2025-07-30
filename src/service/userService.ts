@@ -1,4 +1,4 @@
-import { User } from '@/interface/user';
+import { User } from '@/types/user';
 import {UserFormData} from "@/types/userFormData";
 
 export class UserService {

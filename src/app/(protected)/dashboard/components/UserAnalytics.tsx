@@ -1,9 +1,8 @@
 "use client"
 import {useUsers} from "@/hooks/useUsers";
 import AppPieChart from "@/components/common/PieChart";
-import JoinBarChart from "@/app/(protected)/dashboard/components/JoinBarChart";
+import JoinByDateBarChart from "@/app/(protected)/dashboard/components/JoinByDateBarChart";
 import SummaryCards from "@/app/(protected)/dashboard/components/SummaryCards";
-import {Space} from "antd";
 
 export default function UserAnalytics() {
     const {data: users = []} = useUsers();
@@ -36,7 +35,7 @@ export default function UserAnalytics() {
                 />
                 <AppPieChart data={roleData} title={"User Role Breakdown"}/>
             </div>
-            <JoinBarChart data={joinData}/>
+            <JoinByDateBarChart data={joinData}/>
             <SummaryCards data={{total: 200, active: 150, inactive: 50}}/>
         </div>
     )

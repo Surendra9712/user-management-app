@@ -37,9 +37,7 @@ const LoginForm = () => {
         },
         validationSchema
     );
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
+    const handleSubmit = async () => {
         const isValid = validateForm();
         if (!isValid) return;
         setIsLoading(true);
@@ -69,7 +67,7 @@ const LoginForm = () => {
     return (
         <Form formErrors={errors}>
             <div>
-                <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
+                <h1 className="text-2xl font-bold mb-6 text-center">User Login</h1>
                 {error &&
                     <div className="flex justify-center">
                         <ErrorSpan message={error}></ErrorSpan>
