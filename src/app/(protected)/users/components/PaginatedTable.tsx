@@ -19,6 +19,7 @@ export default function PaginatedTable() {
     const [pagination, setPagination] = useState<TablePaginationConfig>({
         current: 1,
         pageSize: 8,
+        size:"default",
         showSizeChanger: true,
         pageSizeOptions: ['5', '10', '20', '50'],
         position: ['bottomRight'],

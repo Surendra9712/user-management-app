@@ -8,7 +8,7 @@ type Props = {
 
 export default function JoinByDateBarChart({data}: Props) {
     return (
-        <Card>
+        <Card className="shadow-sm">
             <h2 className="text-center text-lg font-semibold mb-2">Users Joined Over Time</h2>
             <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={data}>

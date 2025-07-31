@@ -6,7 +6,7 @@ export const metadata = {
 };
 const LoginPage = () => {
     return (<Flex justify="center" align="center" className="min-h-[calc(100vh-112px)]">
-            <Card className="w-full max-w-md">
+            <Card className="w-full max-w-md shadow-lg">
                 <LoginForm/>
             </Card>
         </Flex>

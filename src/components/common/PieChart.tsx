@@ -1,13 +1,9 @@
 import {Card} from "@/components/common/Card";
 import {Cell, Legend, Pie, PieChart, Tooltip} from "recharts";
+import {PieChartData} from "@/types/pieChartData";
 
-type Props = {
-    data: { name: string; value: number }[];
-    title?: string;
-    colors?: string[]
-};
-export default function AppPieChart({title, data, colors = ['#0088FE', '#FF8042', '#00C49F', '#FFBB28']}: Props) {
-    return <Card className="w-full flex justify-center">
+export default function AppPieChart({title, data, colors = ['#0088FE', '#FF8042', '#00C49F', '#FFBB28']}: PieChartData) {
+    return <Card className="w-full flex justify-center shadow-sm">
         {title &&
             <h2 className="text-center text-lg font-semibold mb-2">{title}</h2>
         }

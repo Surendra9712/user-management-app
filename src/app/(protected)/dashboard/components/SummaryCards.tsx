@@ -1,8 +1,4 @@
-export type SummaryData = {
-    total: number;
-    active: number;
-    inactive: number;
-};
+import {SummaryData} from "@/types/summaryData";
 
 export default function SummaryCards({data}: { data: SummaryData }) {
     return (

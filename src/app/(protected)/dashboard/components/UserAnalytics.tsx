@@ -3,6 +3,7 @@ import {useUsers} from "@/hooks/useUsers";
 import AppPieChart from "@/components/common/PieChart";
 import JoinByDateBarChart from "@/app/(protected)/dashboard/components/JoinByDateBarChart";
 import SummaryCards from "@/app/(protected)/dashboard/components/SummaryCards";
+import {Flex} from "antd";
 
 export default function UserAnalytics() {
     const {data: users = []} = useUsers();
@@ -24,7 +25,7 @@ export default function UserAnalytics() {
     ).map(([month, count]) => ({month, count}));
 
     return (
-        <div className="space-y-6">
+        <Flex vertical gap={'large'}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between">
                 <AppPieChart data={[
                     {name: "Present", value: 10},
@@ -37,6 +38,6 @@ export default function UserAnalytics() {
             </div>
             <JoinByDateBarChart data={joinData}/>
             <SummaryCards data={{total: 200, active: 150, inactive: 50}}/>
-        </div>
+        </Flex>
     )
 }
