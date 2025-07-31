@@ -10,7 +10,7 @@ export default function Layout({children}: { children: React.ReactNode }) {
                 {children}
             </main>
             <footer className="bg-foreground h-16 leading-16 text-center">
-                <p className="text-secondary">© 2023 User Management System</p>
+                <p className="text-secondary">&copy; {new Date().getFullYear()} User Management System</p>
             </footer>
         </AntdRegistry>
     );

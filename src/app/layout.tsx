@@ -29,7 +29,7 @@ export default function RootLayout({
             components: {
                 Button: {
                     controlHeight: 40,
-                    controlHeightSM: 36,
+                    controlHeightSM: 32,
                     controlHeightLG: 56,
                     paddingInline: 20,
                     fontSize: 16,

@@ -1,13 +1,14 @@
 "use client"
-import {DatePicker, Drawer, Radio, Select, Space} from "antd";
+import {DatePicker, Drawer, Radio, Space} from "antd";
 import {useEffect} from "react";
 import {useUsers} from "@/hooks/useUsers";
-import {Button, Form, FormItem, Input, useFormHandler, validators} from "@surendra9712/ui-components";
+import {Button, Form, FormItem, Input, Select, useFormHandler, validators} from "@surendra9712/ui-components";
 import {UserFormData} from "@/types/userFormData";
 import {useMessageApi} from "@/context/MessageProvider";
 import {useUserDrawer} from "@/app/(protected)/users/provider/UserDrawerProvider";
 import dayjs from "dayjs";
 import {isNullOrUndefinedOrEmpty} from "@/utils/helper";
+
 const initialState = {
     name: '',
     email: '',
@@ -34,11 +35,11 @@ const AddEditUser = () => {
         ],
         phone: [
             [validators.required, 'Phone number is required'],
-            [validators.maxLength(10), 'Phone number should not be greater than 10 characters']
+            [validators.phone, 'Invalid phone number']
         ],
         gender: [],
         status: [],
-        joinDate: [[validators.required, 'Join Date is required']],
+        joinDate: [],
         address: [],
         role: [[validators.required, 'Role is required']],
     };
@@ -46,7 +47,6 @@ const AddEditUser = () => {
     const {
         formData,
         errors,
-        touched,
         setFormData,
         handleChange,
         handleBlur,
@@ -76,7 +76,7 @@ const AddEditUser = () => {
         } else {
             setFormData(initialState)
         }
-    }, [user,setFormData]);
+    }, [user, setFormData]);
 
     const handleClose = () => {
         resetForm();
@@ -99,89 +99,86 @@ const AddEditUser = () => {
                         </Button>
                     </Space>
                 }
-                styles={{footer: {textAlign: 'right'}}}
-            >
-                <Form formErrors={errors}
-                      touchedFields={touched}>
-                    <div>
-                        <FormItem name={'name'} label={'Full Name'}>
-                            <Input
-                                placeholder={'Enter full name'}
-                                value={formData.name}
-                                onBlur={() => handleBlur('name')}
-                                onChange={(e) => handleChange('name', e.target.value)}
-                            />
-                        </FormItem>
-                        <FormItem name={'email'} label={'Email'}>
-                            <Input
-                                placeholder={'Enter email'}
-                                value={formData.email}
-                                onBlur={() => handleBlur('email')}
-                                onChange={(e) => handleChange('email', e.target.value)}
-                            />
-                        </FormItem>
-                        <FormItem name={'phone'} label={'Phone Number'}>
-                            <Input
-                                type="number"
-                                placeholder={'Enter phone number'}
-                                value={formData.phone || ''}
-                                onBlur={() => handleBlur('phone')}
-                                onChange={(e) => handleChange('phone', e.target.value)}
-                            />
-                        </FormItem>
-                        <FormItem name="gender" label={'Gender'}>
-                            <Radio.Group
-                                value={formData.gender}
-                                options={[
-                                    {value: 1, label: 'Male'},
-                                    {value: 2, label: 'Female'},
-                                    {value: 3, label: 'Other'},
-                                ]}
-                            />
-                        </FormItem>
-                        <FormItem label={'Status'}>
-                            <Radio.Group
-                                onChange={(e) => handleChange('status', e.target.value)}
-                                value={formData.status}
-                                options={[
-                                    {value: 1, label: 'Active'},
-                                    {value: 0, label: 'Inactive'},
-                                ]}
-                            />
-                        </FormItem>
-                        <FormItem name={'joinDate'} label={'Joined Date'}>
-                            <DatePicker
-                                className={'w-full'}
-                                value={formData.joinDate ? dayjs(formData.joinDate) : undefined}
-                                placeholder={'Select date'}
-                                onBlur={() => handleBlur('joinDate')}
-                                onChange={(e, date) => handleChange('joinDate', date)}
-                            />
-                        </FormItem>
-                        <FormItem name={"role"} label={'Role'}>
-                            <Select
-                                placeholder={'Select role'}
-                                className={'w-full'}
-                                value={!isNullOrUndefinedOrEmpty(formData.role) ? formData.role : undefined}
-                                options={[
-                                    {label: 'Admin', value: "Admin"},
-                                    {label: 'General Manager', value: "General Manager"},
-                                    {label: 'Sales Manager', value: "Sales Manager"},
-                                    {label: 'Branch Manager', value: "Branch Manager"},
-                                ]}
-                                onBlur={() => handleBlur('role')}
-                                onChange={(value) => handleChange('role', value)}
-                            />
-                        </FormItem>
-                        <FormItem name={'address'} label={'Address'}>
-                            <Input
-                                placeholder={'Enter address'}
-                                value={formData.address}
-                                onBlur={() => handleBlur('address')}
-                                onChange={(e) => handleChange('address', e.target.value)}
-                            />
-                        </FormItem>
-                    </div>
+                styles={{footer: {textAlign: 'right'}}}>
+                <Form formErrors={errors}>
+                    <FormItem name={'name'} label={'Full Name'}>
+                        <Input
+                            placeholder={'Enter full name'}
+                            value={formData.name}
+                            onBlur={() => handleBlur('name')}
+                            onChange={(e) => handleChange('name', e.target.value)}
+                        />
+                    </FormItem>
+                    <FormItem name={'email'} label={'Email'}>
+                        <Input
+                            placeholder={'Enter email'}
+                            value={formData.email}
+                            onBlur={() => handleBlur('email')}
+                            onChange={(e) => handleChange('email', e.target.value)}
+                        />
+                    </FormItem>
+                    <FormItem name={'phone'} label={'Phone Number'}>
+                        <Input
+                            type="number"
+                            placeholder={'Enter phone number'}
+                            value={formData.phone || ''}
+                            onBlur={() => handleBlur('phone')}
+                            onChange={(e) => handleChange('phone', e.target.value)}
+                        />
+                    </FormItem>
+                    <FormItem name="gender" label={'Gender'}>
+                        <Radio.Group
+                            value={formData.gender}
+                            onBlur={() => handleBlur('gender')}
+                            onChange={(e) => handleChange('gender', e.target.value)}
+                            options={[
+                                {value: 1, label: 'Male'},
+                                {value: 2, label: 'Female'},
+                                {value: 3, label: 'Other'},
+                            ]}
+                        />
+                    </FormItem>
+                    <FormItem name="status" label={'Status'}>
+                        <Radio.Group
+                            onChange={(e) => handleChange('status', e.target.value)}
+                            value={formData.status}
+                            options={[
+                                {value: 1, label: 'Active'},
+                                {value: 0, label: 'Inactive'},
+                            ]}
+                        />
+                    </FormItem>
+                    <FormItem name={"role"} label={'Role'}>
+                        <Select
+                            placeholder={'Select role'}
+                            className={'w-full'}
+                            value={!isNullOrUndefinedOrEmpty(formData.role) ? formData.role : undefined}
+                            options={[
+                                {label: 'Admin', value: "Admin"},
+                                {label: 'General Manager', value: "General Manager"},
+                                {label: 'Sales Manager', value: "Sales Manager"},
+                                {label: 'Branch Manager', value: "Branch Manager"},
+                            ]}
+                            onBlur={() => handleBlur('role')}
+                            onChange={(value) => handleChange('role', value)}
+                        />
+                    </FormItem>
+                    <FormItem name={'joinDate'} label={'Joined Date'}>
+                        <DatePicker
+                            className={'w-full'}
+                            value={!isNullOrUndefinedOrEmpty(formData.joinDate) ? dayjs(formData.joinDate) : undefined}
+                            placeholder={'Select date'}
+                            onChange={(e, date) => handleChange('joinDate', date)}
+                        />
+                    </FormItem>
+                    <FormItem name={'address'} label={'Address'}>
+                        <Input
+                            placeholder={'Enter address'}
+                            value={formData.address}
+                            onBlur={() => handleBlur('address')}
+                            onChange={(e) => handleChange('address', e.target.value)}
+                        />
+                    </FormItem>
                 </Form>
             </Drawer>
         </div>
